@@ -1,4 +1,6 @@
-module.exports = function(config) {
+var webpack = require('./webpack.config.js');
+
+module.exports = function (config) {
     config.set({
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -20,24 +22,9 @@ module.exports = function(config) {
         exclude: [],
 
         webpack: {
-            devtool: 'inline-source-map',
-            resolve: {
-                extensions: ['', '.js']
-            },
+            devtool: webpack.devtool,
             module: {
-                loaders: [
-                    {
-                        test: /\.js|\.jsx$/,
-                        exclude: /node_modules/,
-                        loader: "babel-loader",
-                        query: {
-                            optional: [ "es7.decorators" ]
-                        }
-                    },
-                    { test: /\.css$/, loader: "style!css" },
-                    { test: /\.scss$/, loader: "style!css!sass" },
-                    { test: /\.json$/, loader: "json-loader" }
-                ]
+                loaders: webpack.module.loaders
             },
             watch: true
         },
