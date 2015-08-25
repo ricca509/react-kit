@@ -9,8 +9,16 @@ module.exports = {
     devtool: "#inline-source-map",
     module: {
         loaders: [
-            { test: /\.js|\.jsx$/, exclude: /node_modules/, loader: "babel-loader" },
-            { test: /\.css$/, loader: ["style", "css"] },
+            {
+                test: /\.js|\.jsx$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
+                query: {
+                    optional: [ "es7.decorators" ]
+                }
+            },
+            { test: /\.css$/, loader: "style!css" },
+            { test: /\.scss$/, loader: "style!css!sass" },
             { test: /\.json$/, loader: "json-loader" }
         ]
     },
