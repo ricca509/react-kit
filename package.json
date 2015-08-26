@@ -11,6 +11,7 @@
     "json-loader": "0.5.2",
     "moment": "2.10.6",
     "react": "0.13.3",
+    "react-router": "0.13.3",
     "underscore": "1.8.3",
     "webpack": "1.11.0"
   },

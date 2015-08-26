@@ -25,6 +25,7 @@ module.exports = {
     devServer: {
         contentBase: "./",
         noInfo: true,
-        inline: true
+        inline: true,
+        historyApiFallback: true
     }
 };
