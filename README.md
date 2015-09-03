@@ -1,3 +1,5 @@
+![Travis-ci](https://travis-ci.org/ricca509/react-alt-karma-es6-webpack.svg?branch=master)
+
 ## What's included:
 - react
 - Alt.js
