@@ -8,13 +8,15 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'node_modules/babel-core/browser-polyfill.js',
+            'node_modules/whatwg-fetch/fetch.js',
+            'node_modules/babel-core/browser-polyfill.js',            
             'src/**/*.spec.js'
         ],
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
+            'helpers/**/*.js': ['webpack'],
             'src/**/*.spec.js': ['webpack', 'sourcemap']
         },
 
